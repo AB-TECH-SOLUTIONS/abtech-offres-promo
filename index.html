@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AB TECH SOLUTIONS - Développeur Web & Mobile</title>
   <meta name="description" content="AB TECH SOLUTIONS, développement web & mobile sur mesure, applications et sites professionnels." />
-  
+
   <!-- Open Graph -->
   <meta property="og:title" content="AB TECH SOLUTIONS - Développement Web & Mobile" />
   <meta property="og:description" content="Création d'applications web & mobile personnalisées." />
@@ -28,6 +28,8 @@
     <div class="container header-inner">
       <img src="https://i.imgur.com/MR89giH.png" alt="Logo AB TECH SOLUTIONS" class="logo" />
       <h1 class="title-text">AB TECH SOLUTIONS</h1>
+
+      <button class="language-switcher" id="langSwitch" aria-label="Changer la langue">EN</button>
       <button id="darkModeToggle" aria-label="Basculer le mode sombre" title="Basculer le mode sombre">🌙</button>
       <button id="menuToggle" aria-label="Afficher le menu" aria-expanded="false" aria-controls="navMenu" title="Afficher le menu" class="menu-toggle">☰</button>
     </div>
@@ -35,10 +37,11 @@
 
   <nav id="navMenu" class="nav-menu" aria-hidden="true" >
     <ul>
-      <li><a href="#hero" tabindex="-1">Accueil</a></li>
-      <li><a href="#services" tabindex="-1">Mes Services</a></li>
-      <li><a href="#contact" tabindex="-1">Contact</a></li>
-      <li><a href="#map" tabindex="-1">Localisation</a></li>
+      <li><a href="#hero" tabindex="-1" data-lang-fr="Accueil" data-lang-en="Home">Accueil</a></li>
+      <li><a href="#services" tabindex="-1" data-lang-fr="Mes Services" data-lang-en="Services">Mes Services</a></li>
+      <li><a href="#prices" tabindex="-1" data-lang-fr="Tarifs" data-lang-en="Pricing">Tarifs</a></li>
+      <li><a href="#contact" tabindex="-1" data-lang-fr="Contact" data-lang-en="Contact">Contact</a></li>
+      <li><a href="#map" tabindex="-1" data-lang-fr="Localisation" data-lang-en="Location">Localisation</a></li>
     </ul>
   </nav>
 
@@ -47,66 +50,94 @@
   <main>
     <section id="hero">
       <div class="container">
-        <h2>Développeur Web & Mobile</h2>
-        <p>Création rapide – Design moderne – Solutions intelligentes</p>        
-        <a href="#contact" class="btn">Demandez un devis</a>
+        <h2 data-lang-fr="Développeur Web & Mobile" data-lang-en="Web & Mobile Developer">Développeur Web & Mobile</h2>
+        <p data-lang-fr="Création rapide – Design moderne – Solutions intelligentes" data-lang-en="Fast creation – Modern design – Smart solutions">
+          Création rapide – Design moderne – Solutions intelligentes
+        </p>
+        <a href="#contact" class="btn" data-lang-fr="Demandez un devis" data-lang-en="Request a Quote">Demandez un devis</a>
       </div>
     </section>
 
-    <section class="services">
-      <h2>Mes Services</h2>
+    <section id="services" class="services">
+      <h2 data-lang-fr="Nos Services" data-lang-en="Services">Mes Services</h2>
       <div class="cards">
         <div class="card">
-          <h3>Création de sites web</h3>
-          <p>Vitrine, E-commerce, One page, Blog, etc.</p>
+          <h3 data-lang-fr="Création de sites web" data-lang-en="Website Creation">Création de sites web</h3>
+          <p data-lang-fr="Vitrine, E-commerce, One page, Blog, etc." data-lang-en="Showcase, E-commerce, One page, Blog, etc.">
+            Vitrine, E-commerce, One page, Blog, etc.
+          </p>
         </div>
         <div class="card">
-          <h3>Apps mobiles</h3>
-          <p>Développement d'applications web personnalisées, Mobiles Android & IOS</p>
+          <h3 data-lang-fr="Apps mobiles" data-lang-en="Mobile Apps">Apps mobiles</h3>
+          <p data-lang-fr="Développement d'applications web personnalisées, Mobiles Android & IOS" data-lang-en="Custom web apps, Android & IOS mobile apps">
+            Développement d'applications web personnalisées, Mobiles Android & IOS
+          </p>
         </div>
         <div class="card">
-          <h3>Projets sur mesure</h3>
-          <p>Conseil en architecture, Innovation digital & Intégration d'API et services tiers</p>
+          <h3 data-lang-fr="Projets sur mesure" data-lang-en="Custom Projects">Projets sur mesure</h3>
+          <p data-lang-fr="Conseil en architecture, Innovation digital & Intégration d'API et services tiers" data-lang-en="Architecture consulting, Digital innovation & API integrations">
+            Conseil en architecture, Innovation digital & Intégration d'API et services tiers
+          </p>
         </div>
         <div class="card">
-          <h3>SAV & Dépannage</h3>
-          <p>Maintenance évolutive et corrections de bugs</p>
+          <h3 data-lang-fr="SAV & Dépannage" data-lang-en="Support & Maintenance">SAV & Dépannage</h3>
+          <p data-lang-fr="Maintenance évolutive et corrections de bugs" data-lang-en="Ongoing maintenance & bug fixes">
+            Maintenance évolutive et corrections de bugs
+          </p>
         </div>
+      </div>
+    </section>
+
+    <section id="prices" class="price-grid" aria-label="Tarifs Indicatifs/ Pricing grid">
+      <div class="price-card" tabindex="0">
+        <h4 data-lang-fr="Site Vitrine" data-lang-en="Showcase Website">Site Vitrine</h4>
+        <p data-lang-fr="Site professionnel simple et efficace." data-lang-en="Simple and efficient professional website.">Site professionnel simple et efficace.</p>
+        <div class="price">150 000 FCFA</div>
+      </div>
+      <div class="price-card" tabindex="0">
+        <h4 data-lang-fr="Site E-commerce" data-lang-en="E-commerce Website">Site E-commerce</h4>
+        <p data-lang-fr="Boutique en ligne sécurisée, responsive." data-lang-en="Secure, responsive online shop.">Boutique en ligne sécurisée, responsive.</p>
+        <div class="price">350 000 FCFA</div>
+      </div>
+      <div class="price-card" tabindex="0">
+        <h4 data-lang-fr="Application Mobile" data-lang-en="Mobile Application">Application Mobile</h4>
+        <p data-lang-fr="App Android & IOS personnalisée." data-lang-en="Custom Android & IOS app.">App Android & IOS personnalisée.</p>
+        <div class="price">450 000 FCFA</div>
       </div>
     </section>
 
     <section id="contact">
       <div class="container">
-        <h2>Contact & Devis</h2>
+        <h2 data-lang-fr="Contact & Devis" data-lang-en="Contact & Quote">Contact & Devis</h2>
         <form action="https://formspree.io/f/xgvzpawe" method="POST" novalidate>
           <div class="form-group">
-            <label for="name">Nom complet <span aria-hidden="true">*</span></label>
+            <label for="name" data-lang-fr="Nom complet" data-lang-en="Full name">Nom complet <span aria-hidden="true">*</span></label>
             <input type="text" id="name" name="name" placeholder="Nom complet" required aria-required="true" />
           </div>
           <div class="form-group">
-            <label for="email">Email <span aria-hidden="true">*</span></label>
+            <label for="email" data-lang-fr="Email" data-lang-en="Email">Email <span aria-hidden="true">*</span></label>
             <input type="email" id="email" name="email" placeholder="Email" required aria-required="true" />
           </div>
           <div class="form-group">
-            <label for="phone">Téléphone <span aria-hidden="true">*</span></label>
+            <label for="phone" data-lang-fr="Téléphone" data-lang-en="Phone">Téléphone <span aria-hidden="true">*</span></label>
             <input type="tel" id="phone" name="phone" placeholder="Téléphone" required aria-required="true" />
           </div>
           <div class="form-group">
-            <label for="location">Localité / Ville</label>
+            <label for="location" data-lang-fr="Localité / Ville" data-lang-en="City / Location">Localité / Ville</label>
             <input type="text" id="location" name="location" placeholder="Localité / Ville" />
           </div>
           <div class="form-group">
-            <label for="message">Décrivez votre besoin <span aria-hidden="true">*</span></label>
+            <label for="message" data-lang-fr="Décrivez votre besoin" data-lang-en="Describe your needs">Décrivez votre besoin <span aria-hidden="true">*</span></label>
             <textarea id="message" name="message" placeholder="Décrivez votre besoin" required aria-required="true" rows="4"></textarea>
           </div>
-          <button type="submit" class="btn">Envoyer</button>
+          <button type="submit" class="btn" data-lang-fr="Envoyer" data-lang-en="Send">Envoyer</button>
         </form>
       </div>
     </section>
 
     <section id="map">
       <div class="container">
-        <h2>Nous localiser</h2>
+        <h2 data-lang-fr="Nous localiser" data-lang-en="Find Us">Nous localiser</h2>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.388492302106!2d9.698076315094428!3d4.048887996944619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10610c19e48a38b3%3A0x2a5a0bc020b2e405!2sRue%205.056%2C%20Douala%2C%20Cameroun!5e0!3m2!1sfr!2sfr!4v1691537909998!5m2!1sfr!2sfr"
           allowfullscreen
@@ -145,22 +176,21 @@
     const navMenu = document.getElementById('navMenu');
     const overlay = document.getElementById('overlay');
 
-    function openMenu() {
-      navMenu.classList.add('open');
-      navMenu.setAttribute('aria-hidden', 'false');
-      menuToggle.setAttribute('aria-expanded', 'true');
-      overlay.classList.add('active');
-      // Enable tab navigation inside menu
-      navMenu.querySelectorAll('a').forEach(link => link.tabIndex = 0);
-    }
-
     function closeMenu() {
       navMenu.classList.remove('open');
-      navMenu.setAttribute('aria-hidden', 'true');
-      menuToggle.setAttribute('aria-expanded', 'false');
       overlay.classList.remove('active');
-      // Disable tab navigation inside menu
-      navMenu.querySelectorAll('a').forEach(link => link.tabIndex = -1);
+      menuToggle.setAttribute('aria-expanded', 'false');
+      // Remove tabindex from nav links for accessibility
+      navMenu.querySelectorAll('a').forEach(link => link.setAttribute('tabindex', '-1'));
+      navMenu.setAttribute('aria-hidden', 'true');
+    }
+    function openMenu() {
+      navMenu.classList.add('open');
+      overlay.classList.add('active');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      // Enable tab navigation inside menu
+      navMenu.querySelectorAll('a').forEach(link => link.setAttribute('tabindex', '0'));
+      navMenu.setAttribute('aria-hidden', 'false');
     }
 
     menuToggle.addEventListener('click', () => {
@@ -173,23 +203,33 @@
 
     overlay.addEventListener('click', closeMenu);
 
-    // Close menu on link click
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        closeMenu();
+    // Initialize menu links as not tabbable on load
+    navMenu.querySelectorAll('a').forEach(link => link.setAttribute('tabindex', '-1'));
+    navMenu.setAttribute('aria-hidden', 'true');
+
+    // Language switcher FR / EN
+    const langSwitch = document.getElementById('langSwitch');
+    langSwitch.addEventListener('click', () => {
+      const currentLang = document.documentElement.lang || 'fr';
+      const newLang = currentLang === 'fr' ? 'en' : 'fr';
+      document.documentElement.lang = newLang;
+
+      // Update lang switch button text
+      langSwitch.textContent = newLang === 'fr' ? 'EN' : 'FR';
+
+      // Update all elements with data-lang-fr and data-lang-en attributes
+      document.querySelectorAll('[data-lang-fr]').forEach(el => {
+        el.textContent = newLang === 'fr' ? el.getAttribute('data-lang-fr') : el.getAttribute('data-lang-en');
       });
     });
 
-    // Init GLightbox (pour future galerie si besoin)
-    document.addEventListener('DOMContentLoaded', () => {
-      if (typeof GLightbox !== 'undefined') {
-        GLightbox({
-          selector: '.glightbox'
-        });
-      }
-      // Initially disable tab on menu links (hidden)
-      navMenu.querySelectorAll('a').forEach(link => link.tabIndex = -1);
-    });
+    // Initial text replacement if page loads with lang != fr
+    if ((document.documentElement.lang || 'fr') !== 'fr') {
+      langSwitch.textContent = 'FR';
+      document.querySelectorAll('[data-lang-fr]').forEach(el => {
+        el.textContent = el.getAttribute('data-lang-en');
+      });
+    }
   </script>
 </body>
 </html>

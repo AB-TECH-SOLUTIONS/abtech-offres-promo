@@ -43,11 +43,14 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 15px;
 }
 
 .logo {
-  height: 50px;
-  width: auto;
+  max-height: 60px;
+  max-width: 160px;
+  object-fit: contain;
+  user-select: none;
 }
 
 .title-text {
@@ -81,38 +84,48 @@ header {
 .nav-menu {
   position: fixed;
   top: 0;
-  left: 0;
+  left: -280px; /* hidden by default */
   width: 280px;
   height: 100%;
   background: #007bff;
   color: white;
   padding-top: 60px;
-  transition: transform 0.3s ease;
+  transition: left 0.3s ease, opacity 0.35s ease;
   z-index: 1100;
   box-shadow: 2px 0 8px rgb(0 0 0 / 0.3);
   display: flex;
   flex-direction: column;
-  transform: translateX(-100%);
-  will-change: transform;
+  opacity: 0;
+  will-change: transform, opacity;
 }
 
 .nav-menu.open {
-  transform: translateX(0);
+  left: 0;
+  opacity: 1;
 }
 
 .nav-menu ul {
-  display: flex;
+  flex-direction: column;
   gap: 25px;
   margin: 0;
-  padding: 0;
+  padding: 0 25px;
   list-style: none;
 }
 
 .nav-menu ul li a {
   color: white;
   font-weight: 600;
-  font-size: 1rem;
-  padding: 10px 5px;
+  font-size: 1.25rem;
+  padding: 12px 0;
+  display: block;
+  user-select: none;
+}
+
+.nav-menu ul li a:hover,
+.nav-menu ul li a:focus {
+  background-color: #0056b3;
+  outline: none;
+  border-radius: 6px;
 }
 
 /* BUTTONS */
@@ -341,15 +354,18 @@ footer {
   background: #007bff;
   color: white;
   padding-top: 60px;
-  transition: left 0.3s ease;
+  transition: left 0.3s ease, opacity 0.35s ease;
   z-index: 1100;
   box-shadow: 2px 0 8px rgb(0 0 0 / 0.3);
   display: flex;
   flex-direction: column;
+  opacity: 0;
+  will-change: transform, opacity;
 }
 
 .nav-menu.open {
   left: 0;
+  opacity: 1;
 }
 
 .nav-menu ul {
@@ -392,12 +408,12 @@ footer {
   visibility: visible;
 }
 
-/* RESPONSIVE */
+/* Responsive */
 
 /* Hide nav menu on desktop and show inline */
 @media screen and (min-width: 768px) {
   .menu-toggle {
-    display: none;
+    display: none !important;
   }
 
   #navMenu {
@@ -410,6 +426,7 @@ footer {
     padding: 0 !important;
     left: 0 !important;
     display: flex !important;
+    opacity: 1 !important;
   }
 
   #navMenu ul {
@@ -477,4 +494,166 @@ footer {
   #darkModeToggle {
     right: 15px;
   }
+}
+
+/* ========================= */
+/* AJOUTS & AMÉLIORATIONS CSS */
+/* ========================= */
+
+/* Animation douce menu mobile (transform + opacity) */
+.nav-menu {
+  will-change: transform, opacity;
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
+}
+
+.nav-menu.open {
+  opacity: 1;
+}
+
+/* Uniformisation du titre H2 "Développeur Web & Mobile" et "Mes Services" */
+#hero h2,
+.services h2 {
+  font-weight: 800;
+  font-size: 2.4rem;
+  color: #0056b3;
+  margin-bottom: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Uniformisation paragraphe sous héros */
+#hero p {
+  font-size: 1.2rem;
+  color: #004080;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+/* Section "Mes Services" - uniformisation des cartes */
+.cards {
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.card {
+  background: linear-gradient(145deg, #e6efff, #cbdcff);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgb(0 123 255 / 0.15);
+  padding: 28px 22px;
+  cursor: default;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  color: #003366;
+  margin-bottom: 8px;
+  user-select: text;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #1a1a1a;
+  line-height: 1.5;
+  user-select: text;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 28px rgb(0 123 255 / 0.25);
+}
+
+/* Grille de prix simple et élégante */
+.price-grid {
+  max-width: 920px;
+  margin: 50px auto 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  gap: 28px;
+  text-align: center;
+}
+
+.price-card {
+  background: #f8faff;
+  border: 2px solid #007bff;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 2px 12px rgb(0 123 255 / 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.price-card:hover,
+.price-card:focus-within {
+  border-color: #0056b3;
+  box-shadow: 0 8px 24px rgb(0 86 179 / 0.25);
+}
+
+.price-card h4 {
+  font-size: 1.4rem;
+  color: #004080;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.price-card p {
+  font-size: 1.05rem;
+  color: #222;
+  line-height: 1.4;
+  margin-bottom: 18px;
+}
+
+.price-card .price {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #007bff;
+  margin-bottom: 14px;
+  user-select: text;
+}
+
+/* Positionnement & équilibre logo dans header */
+header .container.header-inner {
+  align-items: center;
+  gap: 12px;
+  padding: 0 15px;
+}
+
+/* Switch langue FR/EN - top right */
+.language-switcher {
+  position: absolute;
+  top: 14px;
+  right: 60px;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 24px;
+  padding: 4px 10px;
+  font-size: 0.9rem;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.language-switcher:hover,
+.language-switcher:focus {
+  background-color: white;
+  color: #007bff;
+  outline: none;
+}
+
+/* Fix pour form group inputs (accessibilité) */
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 3px solid #0056b3;
+  outline-offset: 2px;
+}
+
+/* Smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
 }
