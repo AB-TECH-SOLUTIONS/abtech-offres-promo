@@ -1,50 +1,116 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Développeur Web & Mobile | Aurel-Bradley</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AB Tech Solutions - Support informatique & sécurité</title>
+
+  <!-- SEO meta tags -->
+  <meta name="description" content="AB Tech Solutions : support informatique, cloud, vidéosurveillance et tracking GPS au Cameroun." />
+  <meta name="keywords" content="maintenance informatique, cloud, vidéosurveillance, tracking GPS, support IT, Cameroun" />
+  <meta name="author" content="AB Tech Solutions" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- AOS animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Lightbox CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
 </head>
 <body>
-  <header>
-    <h1>🚀 Besoin d’un Développeur Web & Mobile ?</h1>
-    <p>Création rapide – Design moderne – Solutions intelligentes</p>
-    <a href="#contact" class="cta">Demander un devis gratuit</a>
+  <header data-aos="fade-down">
+    <h1>AB Tech Solutions</h1>
+    <p>Support informatique, cloud, vidéosurveillance et tracking GPS</p>
   </header>
 
-  <section class="services">
-    <h2>Mes Services</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Sites web pros</h3>
-        <p>Vitrine, e-commerce, one page, blog, etc.</p>
-      </div>
-      <div class="card">
-        <h3>Apps mobiles</h3>
-        <p>Android / iOS en React Native ou Flutter</p>
-      </div>
-      <div class="card">
-        <h3>Projets sur mesure</h3>
-        <p>Portails, backends, APIs, innovation & IA</p>
-      </div>
-    </div>
-  </section>
+  <div class="button-bar">
+    <button id="darkToggleBtn">Mode Sombre / Clair</button>
+    <button onclick="window.print()">Imprimer / PDF</button>
+  </div>
 
-  <section id="contact">
-    <h2>📩 Contact & Devis</h2>
-    <form action="https://formspree.io/f/xgvzpawe" method="POST">
-      <input type="text" name="name" placeholder="Nom complet" required>
-      <input type="email" name="email" placeholder="Adresse e-mail" required>
-      <textarea name="message" placeholder="Décrivez votre besoin ici..." required></textarea>
-      <button type="submit">Envoyer</button>
-    </form>
-  </section>
+  <main class="container">
+    <section data-aos="fade-up" aria-label="Galerie des réalisations">
+      <h2>Nos Réalisations</h2>
+      <div class="gallery">
+  	<a href="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" data-lightbox="gallery" data-title="Installation vidéosurveillance connectée">
+    	  <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Installation vidéosurveillance connectée" />
+  	</a>
+  	<a href="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" data-lightbox="gallery" data-title="Configuration serveur cloud pour PME">
+    	  <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Configuration serveur cloud pour PME" />
+  	</a>
+  	<a href="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=800&q=80" data-lightbox="gallery" data-title="Tracking GPS véhicules">
+    	  <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=400&q=80" alt="Tracking GPS véhicules" />
+  	</a>
+  	<a href="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" data-lightbox="gallery" data-title="Support informatique et maintenance">
+    	  <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80" alt="Support informatique et maintenance" />
+  	</a>
+      </div>
+    </section>
 
-  <footer>
-    <p>© 2025 Aurel-Bradley – Développeur Web & Mobile | WhatsApp : +237 691 586 899</p>
+    <section id="contact" data-aos="fade-up" aria-label="Formulaire de contact et devis">
+      <h2>Contact & Devis</h2>
+      <form action="https://formspree.io/f/xgvzpawe" method="POST" aria-required="true">
+        <label for="name">Nom complet :</label>
+        <input type="text" id="name" name="name" required placeholder="Votre nom complet" />
+
+        <label for="email">Adresse e-mail :</label>
+        <input type="email" id="email" name="email" required placeholder="exemple@email.com" />
+
+        <label for="phone">Téléphone :</label>
+        <input type="tel" id="phone" name="phone" required placeholder="+237 6X XX XX XX" />
+
+        <label for="locality">Localité :</label>
+        <input type="text" id="locality" name="locality" placeholder="Ville ou région" />
+
+        <label for="message">Votre demande :</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre besoin"></textarea>
+
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+
+    <section aria-label="Carte de localisation" data-aos="fade-up">
+      <h2>Nous Localiser</h2>
+      <div class="map-container" role="region" aria-label="Carte Google Maps de Yaoundé, Cameroun">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.7260024762475!2d11.502075914753182!3d3.848032497225857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bfd1f1ce83597%3A0x55df1d1c05b86932!2sYaound%C3%A9!5e0!3m2!1sfr!2scm!4v1622550243543!5m2!1sfr!2scm" 
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Carte Google Maps de Yaoundé, Cameroun">
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer data-aos="fade-up">
+    <p>&copy; 2025 AB Tech Solutions - Tous droits réservés.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <a href="https://wa.me/237691586899" class="whatsapp-button" aria-label="Contacter AB Tech Solutions sur WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" aria-hidden="true" />
+    WhatsApp
+  </a>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  <script>
+    AOS.init();
+
+    // Mode sombre toggle + automatique
+    const darkToggleBtn = document.getElementById('darkToggleBtn');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if(prefersDark){
+      document.body.classList.add('dark-mode');
+    }
+
+    darkToggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
 </body>
 </html>
+
