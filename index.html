@@ -27,19 +27,22 @@
   <header>
     <div class="container header-inner">
       <img src="https://i.imgur.com/MR89giH.png" alt="Logo AB TECH SOLUTIONS" class="logo" />
-      <h1>AB TECH SOLUTIONS</h1>
+      <h1 class="title-text">AB TECH SOLUTIONS</h1>
       <button id="darkModeToggle" aria-label="Basculer le mode sombre" title="Basculer le mode sombre">🌙</button>
       <button id="menuToggle" aria-label="Afficher le menu" aria-expanded="false" aria-controls="navMenu" title="Afficher le menu" class="menu-toggle">☰</button>
-      <nav id="navMenu" class="nav-menu" hidden>
-        <ul>
-          <li><a href="#hero">Accueil</a></li>
-          <li><a href="#services">Mes Services</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#map">Localisation</a></li>
-        </ul>
-      </nav>
     </div>
   </header>
+
+  <nav id="navMenu" class="nav-menu" aria-hidden="true" >
+    <ul>
+      <li><a href="#hero" tabindex="-1">Accueil</a></li>
+      <li><a href="#services" tabindex="-1">Mes Services</a></li>
+      <li><a href="#contact" tabindex="-1">Contact</a></li>
+      <li><a href="#map" tabindex="-1">Localisation</a></li>
+    </ul>
+  </nav>
+
+  <div id="overlay"></div>
 
   <main>
     <section id="hero">
@@ -50,26 +53,24 @@
       </div>
     </section>
 
-    <section id="services">
-      <div class="container">
-        <h2>Mes Services</h2>
-        <div class="cards">
-          <div class="card" tabindex="0" role="region" aria-label="Création de sites web">
-            <h3>Création de sites web</h3>
-            <p>Vitrine, E-commerce, One page, Blog, etc.</p>
-          </div>
-          <div class="card" tabindex="0" role="region" aria-label="Apps mobiles">
-            <h3>Apps mobiles</h3>
-            <p>Développement d'applications web personnalisées, Mobiles Android & iOS</p>
-          </div>
-          <div class="card" tabindex="0" role="region" aria-label="Projets sur mesure">
-            <h3>Projets sur mesure</h3>
-            <p>Conseil en architecture, innovation digitale & intégration d'API et services tiers</p>
-          </div>
-          <div class="card" tabindex="0" role="region" aria-label="SAV & Dépannage">
-            <h3>SAV & Dépannage</h3>
-            <p>Maintenance évolutive et corrections de bugs</p>
-          </div>
+    <section class="services">
+      <h2>Mes Services</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Création de sites web</h3>
+          <p>Vitrine, E-commerce, One page, Blog, etc.</p>
+        </div>
+        <div class="card">
+          <h3>Apps mobiles</h3>
+          <p>Développement d'applications web personnalisées, Mobiles Android & IOS</p>
+        </div>
+        <div class="card">
+          <h3>Projets sur mesure</h3>
+          <p>Conseil en architecture, Innovation digital & Intégration d'API et services tiers</p>
+        </div>
+        <div class="card">
+          <h3>SAV & Dépannage</h3>
+          <p>Maintenance évolutive et corrections de bugs</p>
         </div>
       </div>
     </section>
@@ -91,8 +92,8 @@
             <input type="tel" id="phone" name="phone" placeholder="Téléphone" required aria-required="true" />
           </div>
           <div class="form-group">
-            <label for="location">Localité</label>
-            <input type="text" id="location" name="location" placeholder="Localité" />
+            <label for="location">Localité / Ville</label>
+            <input type="text" id="location" name="location" placeholder="Localité / Ville" />
           </div>
           <div class="form-group">
             <label for="message">Décrivez votre besoin <span aria-hidden="true">*</span></label>
@@ -107,7 +108,7 @@
       <div class="container">
         <h2>Nous localiser</h2>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.371306267739!2d9.698220915094247!3d4.048946896940682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10610c19cbaf2f2d%3A0xbb2a1e38db80407c!2sRue%205.056%2C%20Douala%2C%20Cameroun!5e0!3m2!1sfr!2sfr!4v1691512345678!5m2!1sfr!2sfr"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.388492302106!2d9.698076315094428!3d4.048887996944619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10610c19e48a38b3%3A0x2a5a0bc020b2e405!2sRue%205.056%2C%20Douala%2C%20Cameroun!5e0!3m2!1sfr!2sfr!4v1691537909998!5m2!1sfr!2sfr"
           allowfullscreen
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
@@ -123,7 +124,7 @@
 
   <footer>
     <div class="container">
-      <p>© 2025 Aurel-Bradley – Développeur Web & Mobile | Tous droits réservés</p>
+      <p>© 2025 AB TECH SOLUTIONS – Développeur Web & Mobile | Tous droits réservés</p>
     </div>
   </footer>
 
@@ -139,17 +140,44 @@
       }
     });
 
-    // Menu toggle (accessibilité)
+    // Menu drawer toggle (mobile)
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
+    const overlay = document.getElementById('overlay');
+
+    function openMenu() {
+      navMenu.classList.add('open');
+      navMenu.setAttribute('aria-hidden', 'false');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      overlay.classList.add('active');
+      // Enable tab navigation inside menu
+      navMenu.querySelectorAll('a').forEach(link => link.tabIndex = 0);
+    }
+
+    function closeMenu() {
+      navMenu.classList.remove('open');
+      navMenu.setAttribute('aria-hidden', 'true');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      overlay.classList.remove('active');
+      // Disable tab navigation inside menu
+      navMenu.querySelectorAll('a').forEach(link => link.tabIndex = -1);
+    }
+
     menuToggle.addEventListener('click', () => {
-      const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
-      menuToggle.setAttribute('aria-expanded', !expanded);
-      if (navMenu.hasAttribute('hidden')) {
-        navMenu.removeAttribute('hidden');
+      if (navMenu.classList.contains('open')) {
+        closeMenu();
       } else {
-        navMenu.setAttribute('hidden', '');
+        openMenu();
       }
+    });
+
+    overlay.addEventListener('click', closeMenu);
+
+    // Close menu on link click
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        closeMenu();
+      });
     });
 
     // Init GLightbox (pour future galerie si besoin)
@@ -159,6 +187,8 @@
           selector: '.glightbox'
         });
       }
+      // Initially disable tab on menu links (hidden)
+      navMenu.querySelectorAll('a').forEach(link => link.tabIndex = -1);
     });
   </script>
 </body>
