@@ -3,114 +3,151 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AB Tech Solutions - Support informatique & sécurité</title>
+  <title>AB TECH SOLUTIONS - Développeur Web & Mobile sur mesure</title>
+  <meta name="description" content="AB TECH SOLUTIONS, votre partenaire en développement web & mobile. Création d'applications sur mesure, sites professionnels et solutions innovantes." />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="AB TECH SOLUTIONS - Développement Web & Mobile" />
+  <meta property="og:description" content="Création d'applications sur mesure, sites professionnels et solutions mobiles innovantes." />
+  <meta property="og:image" content="https://i.imgur.com/MR89giH.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ton-site.github.io" />
 
-  <!-- SEO meta tags -->
-  <meta name="description" content="AB Tech Solutions : support informatique, cloud, vidéosurveillance et tracking GPS au Cameroun." />
-  <meta name="keywords" content="maintenance informatique, cloud, vidéosurveillance, tracking GPS, support IT, Cameroun" />
-  <meta name="author" content="AB Tech Solutions" />
-  <meta name="robots" content="index, follow" />
-
-  <!-- AOS animation CSS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-  <!-- Lightbox CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AB TECH SOLUTIONS - Développement Web & Mobile" />
+  <meta name="twitter:description" content="Création d'applications sur mesure, sites professionnels et solutions mobiles innovantes." />
+  <meta name="twitter:image" content="https://i.imgur.com/MR89giH.png" />
 
   <link rel="stylesheet" href="style.css" />
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 </head>
 <body>
-  <header data-aos="fade-down">
-    <h1>AB Tech Solutions</h1>
-    <p>Support informatique, cloud, vidéosurveillance et tracking GPS</p>
+  <header>
+    <div class="container header-inner">
+      <img src="https://i.imgur.com/MR89giH.png" alt="Logo AB TECH SOLUTIONS" class="logo" />
+      <h1>AB TECH SOLUTIONS</h1>
+      <button id="darkModeToggle" aria-label="Basculer le mode sombre" title="Basculer le mode sombre">🌙</button>
+      <button id="menuToggle" aria-label="Afficher le menu" aria-expanded="false" aria-controls="navMenu" title="Afficher le menu" class="menu-toggle">☰</button>
+      <nav id="navMenu" class="nav-menu" hidden>
+        <ul>
+          <li><a href="#hero">Accueil</a></li>
+          <li><a href="#portfolio">Projets</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#map">Localisation</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <div class="button-bar">
-    <button id="darkToggleBtn">Mode Sombre / Clair</button>
-    <button onclick="window.print()">Imprimer / PDF</button>
-  </div>
-
-  <main class="container">
-    <section data-aos="fade-up" aria-label="Galerie des réalisations">
-      <h2>Nos Réalisations</h2>
-      <div class="gallery">
-  	<a href="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" data-lightbox="gallery" data-title="Installation vidéosurveillance connectée">
-    	  <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Installation vidéosurveillance connectée" />
-  	</a>
-  	<a href="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" data-lightbox="gallery" data-title="Configuration serveur cloud pour PME">
-    	  <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Configuration serveur cloud pour PME" />
-  	</a>
-  	<a href="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=800&q=80" data-lightbox="gallery" data-title="Tracking GPS véhicules">
-    	  <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=400&q=80" alt="Tracking GPS véhicules" />
-  	</a>
-  	<a href="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" data-lightbox="gallery" data-title="Support informatique et maintenance">
-    	  <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80" alt="Support informatique et maintenance" />
-  	</a>
+  <main>
+    <section id="hero">
+      <div class="container">
+        <h2>Développeur Web & Mobile</h2>
+        <p>Création d'applications sur mesure, sites web professionnels, et solutions mobiles innovantes.</p>
+        <a href="#contact" class="btn">Demandez un devis</a>
       </div>
     </section>
 
-    <section id="contact" data-aos="fade-up" aria-label="Formulaire de contact et devis">
-      <h2>Contact & Devis</h2>
-      <form action="https://formspree.io/f/xgvzpawe" method="POST" aria-required="true">
-        <label for="name">Nom complet :</label>
-        <input type="text" id="name" name="name" required placeholder="Votre nom complet" />
-
-        <label for="email">Adresse e-mail :</label>
-        <input type="email" id="email" name="email" required placeholder="exemple@email.com" />
-
-        <label for="phone">Téléphone :</label>
-        <input type="tel" id="phone" name="phone" required placeholder="+237 6X XX XX XX" />
-
-        <label for="locality">Localité :</label>
-        <input type="text" id="locality" name="locality" placeholder="Ville ou région" />
-
-        <label for="message">Votre demande :</label>
-        <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre besoin"></textarea>
-
-        <button type="submit">Envoyer</button>
-      </form>
+    <section id="portfolio">
+      <div class="container">
+        <h2>Projets récents</h2>
+        <div class="gallery">
+          <a href="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80" class="glightbox" data-glightbox="title: Code en action">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Code en action" />
+          </a>
+          <a href="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" class="glightbox" data-glightbox="title: Développeur au travail">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80" alt="Développeur au travail" />
+          </a>
+          <a href="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1200&q=80" class="glightbox" data-glightbox="title: Aperçu application mobile">
+            <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=400&q=80" alt="Aperçu application mobile" />
+          </a>
+          <a href="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" class="glightbox" data-glightbox="title: Innovation digitale">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80" alt="Innovation digitale" />
+          </a>
+        </div>
+      </div>
     </section>
 
-    <section aria-label="Carte de localisation" data-aos="fade-up">
-      <h2>Nous Localiser</h2>
-      <div class="map-container" role="region" aria-label="Carte Google Maps de Yaoundé, Cameroun">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.7260024762475!2d11.502075914753182!3d3.848032497225857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bfd1f1ce83597%3A0x55df1d1c05b86932!2sYaound%C3%A9!5e0!3m2!1sfr!2scm!4v1622550243543!5m2!1sfr!2scm" 
-          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          title="Carte Google Maps de Yaoundé, Cameroun">
-        </iframe>
+    <section id="contact">
+      <div class="container">
+        <h2>Contact & Devis</h2>
+        <form action="https://formspree.io/f/xgvzpawe" method="POST" novalidate>
+          <div class="form-group">
+            <label for="name">Nom complet <span aria-hidden="true">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Nom complet" required aria-required="true" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" placeholder="Email" required aria-required="true" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Téléphone <span aria-hidden="true">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="Téléphone" required aria-required="true" />
+          </div>
+          <div class="form-group">
+            <label for="location">Localité</label>
+            <input type="text" id="location" name="location" placeholder="Localité" />
+          </div>
+          <div class="form-group">
+            <label for="message">Décrivez votre besoin <span aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" placeholder="Décrivez votre besoin" required aria-required="true" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn">Envoyer</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="map">
+      <div class="container">
+        <h2>Nous localiser</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.371306267739!2d9.698220915094247!3d4.048946896940682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10610c19cbaf2f2d%3A0xbb2a1e38db80407c!2sRue%205.056%2C%20Douala%2C%20Cameroun!5e0!3m2!1sfr!2sfr!4v1691512345678!5m2!1sfr!2sfr"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Carte de localisation Rue 5.056, Douala"
+        ></iframe>
       </div>
     </section>
   </main>
 
-  <footer data-aos="fade-up">
-    <p>&copy; 2025 AB Tech Solutions - Tous droits réservés.</p>
-  </footer>
-
-  <a href="https://wa.me/237691586899" class="whatsapp-button" aria-label="Contacter AB Tech Solutions sur WhatsApp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" aria-hidden="true" />
-    WhatsApp
+  <a href="https://wa.me/237691586899" class="whatsapp-button" target="_blank" aria-label="Contact WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" /> WhatsApp
   </a>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
   <script>
-    AOS.init();
-
-    // Mode sombre toggle + automatique
-    const darkToggleBtn = document.getElementById('darkToggleBtn');
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    if(prefersDark){
-      document.body.classList.add('dark-mode');
-    }
-
-    darkToggleBtn.addEventListener('click', () => {
+    // Mode sombre toggle
+    const toggleBtn = document.getElementById('darkModeToggle');
+    toggleBtn.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
+      if (document.body.classList.contains('dark-mode')) {
+        toggleBtn.textContent = '☀️';
+      } else {
+        toggleBtn.textContent = '🌙';
+      }
+    });
+
+    // Menu toggle (accessibilité)
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+      menuToggle.setAttribute('aria-expanded', !expanded);
+      if (navMenu.hasAttribute('hidden')) {
+        navMenu.removeAttribute('hidden');
+      } else {
+        navMenu.setAttribute('hidden', '');
+      }
+    });
+
+    // Init GLightbox
+    document.addEventListener('DOMContentLoaded', () => {
+      const lightbox = GLightbox({
+        selector: '.glightbox'
+      });
     });
   </script>
 </body>
 </html>
-
