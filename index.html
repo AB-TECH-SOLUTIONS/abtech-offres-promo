@@ -33,7 +33,7 @@
       <nav id="navMenu" class="nav-menu" hidden>
         <ul>
           <li><a href="#hero">Accueil</a></li>
-          <li><a href="#portfolio">Projets</a></li>
+          <li><a href="#services">Mes Services</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="#map">Localisation</a></li>
         </ul>
@@ -45,28 +45,22 @@
     <section id="hero">
       <div class="container">
         <h2>Développeur Web & Mobile</h2>
-        <p>Création d'applications sur mesure, sites web professionnels, et solutions mobiles innovantes.</p>
+        <p>Création rapide - Design moderne - Solutions innovantes.</p>
         <a href="#contact" class="btn">Demandez un devis</a>
       </div>
     </section>
 
-    <section id="portfolio">
+    <section id="services">
       <div class="container">
-        <h2>Projets récents</h2>
-        <div class="gallery">
-          <a href="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80" class="glightbox" data-glightbox="title: Code en action">
-            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Code en action" />
-          </a>
-          <a href="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" class="glightbox" data-glightbox="title: Développeur au travail">
-            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80" alt="Développeur au travail" />
-          </a>
-          <a href="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1200&q=80" class="glightbox" data-glightbox="title: Aperçu application mobile">
-            <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=400&q=80" alt="Aperçu application mobile" />
-          </a>
-          <a href="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" class="glightbox" data-glightbox="title: Innovation digitale">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80" alt="Innovation digitale" />
-          </a>
-        </div>
+        <h2>Mes Services</h2>
+        <ul class="services-list">
+          <li>Développement d'applications web personnalisées</li>
+          <li>Création de sites web professionnels responsives</li>
+          <li>Développement d'applications mobiles Android & iOS</li>
+          <li>Intégration d'API et services tiers</li>
+          <li>Maintenance évolutive et corrections de bugs</li>
+          <li>Conseil en architecture et innovation digitale</li>
+        </ul>
       </div>
     </section>
 
@@ -117,6 +111,12 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" /> WhatsApp
   </a>
 
+  <footer>
+    <div class="container">
+      <p>© 2025 Aurel-Bradley – Développeur Web & Mobile | Tous droits réservés</p>
+    </div>
+  </footer>
+
   <script>
     // Mode sombre toggle
     const toggleBtn = document.getElementById('darkModeToggle');
@@ -142,11 +142,13 @@
       }
     });
 
-    // Init GLightbox
+    // Init GLightbox (inutile ici mais garde si tu veux remettre la galerie)
     document.addEventListener('DOMContentLoaded', () => {
-      const lightbox = GLightbox({
-        selector: '.glightbox'
-      });
+      if (typeof GLightbox !== 'undefined') {
+        GLightbox({
+          selector: '.glightbox'
+        });
+      }
     });
   </script>
 </body>
