@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AB TECH SOLUTIONS - Développeur Web & Mobile sur mesure</title>
-  <meta name="description" content="AB TECH SOLUTIONS, votre partenaire en développement web & mobile. Création d'applications sur mesure, sites professionnels et solutions innovantes." />
+  <title>AB TECH SOLUTIONS - Développeur Web & Mobile</title>
+  <meta name="description" content="AB TECH SOLUTIONS, développement web & mobile sur mesure, applications et sites professionnels." />
   
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph -->
   <meta property="og:title" content="AB TECH SOLUTIONS - Développement Web & Mobile" />
-  <meta property="og:description" content="Création d'applications sur mesure, sites professionnels et solutions mobiles innovantes." />
+  <meta property="og:description" content="Création d'applications web & mobile personnalisées." />
   <meta property="og:image" content="https://i.imgur.com/MR89giH.png" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ton-site.github.io" />
 
-  <!-- Twitter -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="AB TECH SOLUTIONS - Développement Web & Mobile" />
-  <meta name="twitter:description" content="Création d'applications sur mesure, sites professionnels et solutions mobiles innovantes." />
+  <meta name="twitter:description" content="Création d'applications web & mobile personnalisées." />
   <meta name="twitter:image" content="https://i.imgur.com/MR89giH.png" />
 
   <link rel="stylesheet" href="style.css" />
@@ -45,22 +45,30 @@
     <section id="hero">
       <div class="container">
         <h2>Développeur Web & Mobile</h2>
-        <p>Création rapide - Design moderne - Solutions innovantes.</p>
-        <a href="#contact" class="btn">Demandez un devis</a>
+	<p>Création rapide – Design moderne – Solutions intelligentes</p>        
+	<a href="#contact" class="btn">Demandez un devis</a>
       </div>
     </section>
 
-    <section id="services">
-      <div class="container">
-        <h2>Mes Services</h2>
-        <ul class="services-list">
-          <li>Développement d'applications web personnalisées</li>
-          <li>Création de sites web professionnels responsives</li>
-          <li>Développement d'applications mobiles Android & iOS</li>
-          <li>Intégration d'API et services tiers</li>
-          <li>Maintenance évolutive et corrections de bugs</li>
-          <li>Conseil en architecture et innovation digitale</li>
-        </ul>
+    <section class="services">
+      <h2>Mes Services</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Création de sites web</h3>
+          <p>Vitrine, E-commerce, One page, Blog, etc.</p>
+        </div>
+        <div class="card">
+          <h3>Apps mobiles</h3>
+          <p>Développement d'applications web personnalisées, Mobiles Android & IOS</p>
+        </div>
+        <div class="card">
+          <h3>Projets sur mesure</h3>
+          <p>Conseil en architecture, Innovation digital & Intégration d'API et services tiers</p>
+        </div>
+        <div class="card">
+          <h3>SAV & Dépannage</h3>
+	  <p>Maintenance évolutive et corrections de bugs</p>
+        </div>
       </div>
     </section>
 
@@ -142,7 +150,7 @@
       }
     });
 
-    // Init GLightbox (inutile ici mais garde si tu veux remettre la galerie)
+    // Init GLightbox (pour future galerie si besoin)
     document.addEventListener('DOMContentLoaded', () => {
       if (typeof GLightbox !== 'undefined') {
         GLightbox({
