@@ -2,230 +2,145 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AB TECH SOLUTIONS - Développeur Web & Mobile</title>
-  <meta name="description" content="AB TECH SOLUTIONS, développement web & mobile sur mesure, applications et sites professionnels." />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="AB TECH SOLUTIONS - Développement Web & Mobile" />
-  <meta property="og:description" content="Création d'applications web & mobile personnalisées." />
-  <meta property="og:image" content="https://i.imgur.com/MR89giH.png" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ton-site.github.io" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AB TECH SOLUTIONS - Développement Web & Mobile" />
-  <meta name="twitter:description" content="Création d'applications web & mobile personnalisées." />
-  <meta name="twitter:image" content="https://i.imgur.com/MR89giH.png" />
-
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
-  <script defer src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AB Tech Solutions</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+  <!-- HEADER -->
   <header>
-    <div class="container header-inner">
-      <img src="https://i.imgur.com/MR89giH.png" alt="Logo AB TECH SOLUTIONS" class="logo" />
-      <h1 class="title-text">AB TECH SOLUTIONS</h1>
-
-      <button class="language-switcher" id="langSwitch" aria-label="Changer la langue">EN</button>
-      <button id="darkModeToggle" aria-label="Basculer le mode sombre" title="Basculer le mode sombre">🌙</button>
-      <button id="menuToggle" aria-label="Afficher le menu" aria-expanded="false" aria-controls="navMenu" title="Afficher le menu" class="menu-toggle">☰</button>
-    </div>
+    <nav class="container">
+      <div class="logo">AB Tech Solutions</div>
+      <ul class="nav-links">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#solutions">Solutions</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#carriere">Carrières</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="darkModeToggle">🌙</button>
+    </nav>
   </header>
 
-  <nav id="navMenu" class="nav-menu" aria-hidden="true" >
-    <ul>
-      <li><a href="#hero" tabindex="-1" data-lang-fr="Accueil" data-lang-en="Home">Accueil</a></li>
-      <li><a href="#services" tabindex="-1" data-lang-fr="Nos Services" data-lang-en="Services">Nos Services</a></li>
-      <li><a href="#prices" tabindex="-1" data-lang-fr="Tarifs (Indicatifs)" data-lang-en="Pricing">Tarifs (Indicatifs)</a></li>
-      <li><a href="#contact" tabindex="-1" data-lang-fr="Contact" data-lang-en="Contact">Contact</a></li>
-      <li><a href="#map" tabindex="-1" data-lang-fr="Localisation" data-lang-en="Location">Localisation</a></li>
-    </ul>
-  </nav>
-
-  <div id="overlay"></div>
-
-  <main>
-    <section id="hero">
-      <div class="container">
-        <h2 data-lang-fr="Développeur Web & Mobile" data-lang-en="Web & Mobile Developer">Développeur Web & Mobile</h2>
-        <p data-lang-fr="Création rapide – Design moderne – Solutions intelligentes" data-lang-en="Fast creation – Modern design – Smart solutions">
-          Création rapide – Design moderne – Solutions intelligentes
-        </p>
-        <a href="#contact" class="btn" data-lang-fr="Demandez un devis" data-lang-en="Request a Quote">Demandez un devis</a>
-      </div>
-    </section>
-
-    <section id="services" class="services">
-      <h2 data-lang-fr="Nos Services" data-lang-en="Services">Nos Services</h2>
-      <div class="cards">
-        <div class="card">
-          <h3 data-lang-fr="Création de sites web" data-lang-en="Website Creation">Création de sites web</h3>
-          <p data-lang-fr="Vitrine, E-commerce, One page, Blog, etc." data-lang-en="Showcase, E-commerce, One page, Blog, etc.">
-            Vitrine, E-commerce, One page, Blog, etc.
-          </p>
-        </div>
-        <div class="card">
-          <h3 data-lang-fr="Apps mobiles" data-lang-en="Mobile Apps">Apps mobiles</h3>
-          <p data-lang-fr="Développement d'applications web personnalisées, Mobiles Android & IOS" data-lang-en="Custom web apps, Android & IOS mobile apps">
-            Développement d'applications web personnalisées, Mobiles Android & IOS
-          </p>
-        </div>
-        <div class="card">
-          <h3 data-lang-fr="Projets sur mesure" data-lang-en="Custom Projects">Projets sur mesure</h3>
-          <p data-lang-fr="Conseil en architecture, Innovation digital & Intégration d'API et services tiers" data-lang-en="Architecture consulting, Digital innovation & API integrations">
-            Conseil en architecture, Innovation digital & Intégration d'API et services tiers
-          </p>
-        </div>
-        <div class="card">
-          <h3 data-lang-fr="SAV & Dépannage" data-lang-en="Support & Maintenance">SAV & Dépannage</h3>
-          <p data-lang-fr="Maintenance évolutive et corrections de bugs" data-lang-en="Ongoing maintenance & bug fixes">
-            Maintenance évolutive et corrections de bugs
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="prices" class="services price-grid" aria-label="Tarifs Indicatifs / Pricing grid">
-      <h2 data-lang-fr="Tarifs Indicatifs" data-lang-en="Pricing Grid">Tarifs</h2>
-      <div class="price-card" tabindex="0">
-        <h4 data-lang-fr="Site Vitrine & E-commerce" data-lang-en="Showcase Website & E-commerce">Site Vitrine & E-commerce</h4>
-        <p data-lang-fr="Site professionnel simple et efficace/Boutique en ligne sécurisée, responsive." data-lang-en="Simple and efficient professional website/Secure, responsive online shop.">Site professionnel simple et efficace/Boutique en ligne sécurisée, responsive.</p>
-        <div class="price">150 000 FCFA/350 000 FCFA</div>
-      </div>
-      <div class="price-card" tabindex="0">
-        <h4 data-lang-fr="Application Mobile" data-lang-en="Mobile Application">Application Mobile</h4>
-        <p data-lang-fr="App Android & IOS personnalisée." data-lang-en="Custom Android & IOS app.">App Android & IOS personnalisée.</p>
-        <div class="price">450 000 FCFA</div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <h2 data-lang-fr="Contact & Devis" data-lang-en="Contact & Quote">Contact & Devis</h2>
-        <form action="https://formspree.io/f/xgvzpawe" method="POST" novalidate>
-          <div class="form-group">
-            <label for="name" data-lang-fr="Nom complet" data-lang-en="Full name">Nom complet <span aria-hidden="true">*</span></label>
-            <input type="text" id="name" name="name" placeholder="Nom complet" required aria-required="true" />
-          </div>
-          <div class="form-group">
-            <label for="email" data-lang-fr="Email" data-lang-en="Email">Email <span aria-hidden="true">*</span></label>
-            <input type="email" id="email" name="email" placeholder="Email" required aria-required="true" />
-          </div>
-          <div class="form-group">
-            <label for="phone" data-lang-fr="Téléphone" data-lang-en="Phone">Téléphone <span aria-hidden="true">*</span></label>
-            <input type="tel" id="phone" name="phone" placeholder="Téléphone" required aria-required="true" />
-          </div>
-          <div class="form-group">
-            <label for="location" data-lang-fr="Localité / Ville" data-lang-en="City / Location">Localité / Ville</label>
-            <input type="text" id="location" name="location" placeholder="Localité / Ville" />
-          </div>
-          <div class="form-group">
-            <label for="message" data-lang-fr="Décrivez votre besoin" data-lang-en="Describe your needs">Décrivez votre besoin <span aria-hidden="true">*</span></label>
-            <textarea id="message" name="message" placeholder="Décrivez votre besoin" required aria-required="true" rows="4"></textarea>
-          </div>
-          <button type="submit" class="btn" data-lang-fr="Envoyer" data-lang-en="Send">Envoyer</button>
-        </form>
-      </div>
-    </section>
-
-    <section id="map">
-      <div class="container">
-        <h2 data-lang-fr="Nous localiser" data-lang-en="Find Us">Nous localiser</h2>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.388492302106!2d9.698076315094428!3d4.048887996944619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10610c19e48a38b3%3A0x2a5a0bc020b2e405!2sRue%205.056%2C%20Douala%2C%20Cameroun!5e0!3m2!1sfr!2sfr!4v1691537909998!5m2!1sfr!2sfr"
-          allowfullscreen
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Carte de localisation Rue 5.056, Douala"
-        ></iframe>
-      </div>
-    </section>
-  </main>
-
-  <a href="https://wa.me/237691586899" class="whatsapp-button" target="_blank" aria-label="Contact WhatsApp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" /> WhatsApp
-  </a>
-
-  <footer>
-    <div class="container">
-      <p>© 2025 AB TECH SOLUTIONS – Développeur Web & Mobile | Tous droits réservés</p>
+  <!-- HERO -->
+  <section id="accueil" class="hero">
+    <div class="hero-content">
+      <h1>Découvrez l'IT autrement</h1>
+      <p>Solutions technologiques innovantes pour l’Afrique et le monde</p>
+      <a href="#solutions" class="btn">Découvrir nos solutions</a>
     </div>
+    <div class="hero-bg">
+      <img src="images/hero-africa-business-tech.jpg" alt="Carte de l'Afrique tech"/>
+    </div>
+  </section>
+
+  <!-- SOLUTIONS -->
+  <section id="solutions" class="container">
+    <h2>Nos Solutions</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="icons/wrench.svg" alt="Maintenance IT"/>
+        <h3>Maintenance & Support IT</h3>
+        <p>Assistance rapide et efficace pour vos infrastructures informatiques.</p>
+      </div>
+      <div class="card">
+        <img src="icons/cloud-upload.svg" alt="Cloud"/>
+        <h3>Cloud & Sauvegarde</h3>
+        <p>Stockage sécurisé et accessible partout.</p>
+      </div>
+      <div class="card">
+        <img src="icons/camera.svg" alt="Vidéosurveillance"/>
+        <h3>Vidéosurveillance</h3>
+        <p>Sécurité 24/7 avec monitoring à distance.</p>
+      </div>
+      <div class="card">
+        <img src="icons/gps.svg" alt="Tracking"/>
+        <h3>Tracking GPS & IoT</h3>
+        <p>Suivi en temps réel de vos biens et véhicules.</p>
+      </div>
+      <div class="card">
+        <img src="icons/code.svg" alt="Développement"/>
+        <h3>Développement Web & Mobile</h3>
+        <p>Applications sur mesure adaptées à vos besoins.</p>
+      </div>
+      <div class="card">
+        <img src="icons/shield.svg" alt="Sécurité"/>
+        <h3>Sécurité & Conformité</h3>
+        <p>Protection des données et respect des normes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETS -->
+  <section id="projets" class="container">
+    <h2>Projets en développement</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="icons/government.svg" alt="E-gouvernance"/>
+        <h3>Portail e-gouvernance</h3>
+        <p>Plateforme numérique pour services publics.</p>
+      </div>
+      <div class="card">
+        <img src="icons/shop.svg" alt="E-commerce"/>
+        <h3>E-commerce multi-commerces</h3>
+        <p>Marketplace innovante pour commerçants locaux.</p>
+      </div>
+      <div class="card">
+        <img src="icons/education.svg" alt="Éducation"/>
+        <h3>Gestion scolaire</h3>
+        <p>Solution intégrée pour écoles et universités.</p>
+      </div>
+      <div class="card">
+        <img src="icons/truck.svg" alt="Flotte"/>
+        <h3>Tracking flottes</h3>
+        <p>Suivi optimisé des véhicules d’entreprise.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARRIÈRES -->
+  <section id="carriere" class="container">
+    <h2>Rejoignez notre équipe</h2>
+    <p>Vous êtes passionné·e par la tech et l’innovation ? Rejoignez une équipe dynamique où chaque talent contribue à transformer les organisations africaines par des solutions numériques concrètes.</p>
+    <a href="#" class="btn">Candidature spontanée</a>
+  </section>
+
+  <!-- À PROPOS -->
+  <section id="apropos" class="container">
+    <h2>À propos</h2>
+    <p>AB Tech Solutions est une start-up IT ambitieuse fondée pour répondre aux défis numériques spécifiques du continent africain. Nous croyons en une technologie accessible, pragmatique et évolutive, pensée pour le terrain.</p>
+    <blockquote>« Nos racines africaines nous poussent à créer des solutions concrètes, adaptées et accessibles. » — MBY Aurel-Bradley, Fondateur</blockquote>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="container">
+    <h2>Contact / Demander un devis</h2>
+    <form id="contactForm" action="https://formspree.io/f/TON_ENDPOINT_FORMSPREE" method="POST">
+      <input type="text" name="name" placeholder="Votre nom" required/>
+      <input type="email" name="email" placeholder="Votre email" required/>
+      <input type="tel" name="phone" placeholder="Votre téléphone"/>
+      <textarea name="message" placeholder="Votre message" required></textarea>
+      <button type="submit" class="btn">Envoyer</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 AB Tech Solutions - Tous droits réservés</p>
   </footer>
 
-  <script>
-    // Mode sombre toggle
-    const toggleBtn = document.getElementById('darkModeToggle');
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      if (document.body.classList.contains('dark-mode')) {
-        toggleBtn.textContent = '☀️';
-      } else {
-        toggleBtn.textContent = '🌙';
-      }
-    });
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/237691586899" class="whatsapp-btn" target="_blank">💬</a>
 
-    // Menu drawer toggle (mobile)
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-    const overlay = document.getElementById('overlay');
+  <!-- POPUP -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <p>Merci pour votre message, nous vous répondrons rapidement !</p>
+      <button id="closePopup" class="btn">OK</button>
+    </div>
+  </div>
 
-    function closeMenu() {
-      navMenu.classList.remove('open');
-      overlay.classList.remove('active');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      // Remove tabindex from nav links for accessibility
-      navMenu.querySelectorAll('a').forEach(link => link.setAttribute('tabindex', '-1'));
-      navMenu.setAttribute('aria-hidden', 'true');
-    }
-    function openMenu() {
-      navMenu.classList.add('open');
-      overlay.classList.add('active');
-      menuToggle.setAttribute('aria-expanded', 'true');
-      // Enable tab navigation inside menu
-      navMenu.querySelectorAll('a').forEach(link => link.setAttribute('tabindex', '0'));
-      navMenu.setAttribute('aria-hidden', 'false');
-    }
-
-    menuToggle.addEventListener('click', () => {
-      if (navMenu.classList.contains('open')) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
-    });
-
-    overlay.addEventListener('click', closeMenu);
-
-    // Initialize menu links as not tabbable on load
-    navMenu.querySelectorAll('a').forEach(link => link.setAttribute('tabindex', '-1'));
-    navMenu.setAttribute('aria-hidden', 'true');
-
-    // Language switcher FR / EN
-    const langSwitch = document.getElementById('langSwitch');
-    langSwitch.addEventListener('click', () => {
-      const currentLang = document.documentElement.lang || 'fr';
-      const newLang = currentLang === 'fr' ? 'en' : 'fr';
-      document.documentElement.lang = newLang;
-
-      // Update lang switch button text
-      langSwitch.textContent = newLang === 'fr' ? 'EN' : 'FR';
-
-      // Update all elements with data-lang-fr and data-lang-en attributes
-      document.querySelectorAll('[data-lang-fr]').forEach(el => {
-        el.textContent = newLang === 'fr' ? el.getAttribute('data-lang-fr') : el.getAttribute('data-lang-en');
-      });
-    });
-
-    // Initial text replacement if page loads with lang != fr
-    if ((document.documentElement.lang || 'fr') !== 'fr') {
-      langSwitch.textContent = 'FR';
-      document.querySelectorAll('[data-lang-fr]').forEach(el => {
-        el.textContent = el.getAttribute('data-lang-en');
-      });
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
